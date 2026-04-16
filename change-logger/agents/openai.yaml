@@ -1,0 +1,4 @@
+interface:
+  display_name: "Change Logger"
+  short_description: "Create per-day Markdown log files"
+  default_prompt: "Use $change-logger to create one Markdown activity log file per coding task inside the current date directory."
