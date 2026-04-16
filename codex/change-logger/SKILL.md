@@ -43,6 +43,9 @@ Default destination selection is:
 3. `<cwd>/.codex/activity-log/` otherwise.
 4. `/home/$USER/workspace/activity-log/` if that workspace exists; otherwise `~/workspace/activity-log/`.
 
+Fallback behavior is controlled by `--fallback-mode auto|never` or `CODEX_ACTIVITY_LOG_FALLBACK`.
+The default is `auto`. When fallback is used, the script emits a warning on stderr and prints the final path on stdout.
+
 Default output format is Markdown. Use `--format jsonl` only when another tool explicitly needs machine-oriented records.
 
 Do not write secrets, tokens, passwords, cookies, or full credential-bearing commands into the log. Summarize sensitive values instead of copying them.
@@ -75,6 +78,7 @@ Run the logger from the skill directory or by absolute path. Repeat `--file` and
 python scripts/append_log.py \
   --kind code_change \
   --status completed \
+  --fallback-mode auto \
   --request "Fix the placement overflow bug in nonlinear placement" \
   --summary "Adjusted the overflow stopping condition and updated the related test." \
   --file AiEDA/third_party/AutoDMP/dreamplace/NonLinearPlace.py \
@@ -88,6 +92,7 @@ For recommendation-only tasks, omit `--file` if no file was touched:
 python scripts/append_log.py \
   --kind advice \
   --status completed \
+  --fallback-mode auto \
   --request "How should we cache placement metadata?" \
   --summary "Recommended a repo-local SQLite cache with content-hash invalidation." \
   --notes "No code changes were made."

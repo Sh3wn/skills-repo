@@ -1,0 +1,4 @@
+interface:
+  display_name: "Safe Git Publish"
+  short_description: "Commit and push changes with git safety checks"
+  default_prompt: "Use $safe-git-publish to verify git identity, stage only intended files, and publish this branch safely."

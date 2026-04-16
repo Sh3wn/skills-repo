@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Writer"
+  short_description: "Turn diffs into actionable review findings"
+  default_prompt: "Use $review-writer to review these changes and report severity-ordered findings with exact file references."
